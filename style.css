@@ -278,10 +278,10 @@ font-size: 14px;
 color: #666;
 }
 
-.logo-footer {
-width: 100px;
-}
 
+.media-body{
+  margin-left: 27px;
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
 .block-2 {
@@ -299,6 +299,7 @@ margin-bottom: 20px;
 height: 60px;
 margin-top: 0px;
 width: 300px;
+text-decoration: none;
 }
 .foot_paragraph {
 color: #abaeb5; /* Text color */
@@ -373,6 +374,7 @@ font-size: 1.3rem;
 display: inline-block;
 text-align: left;
 margin-right: 200px;
+text-decoration: none;
 }
 .home_grey_text {
   color: #565656;
@@ -551,7 +553,7 @@ body {
   }
 }
 .animate_testmonials {
-  animation: marquee 50s infinite forwards;
+  animation: marquee 20s infinite forwards;
 }
 
 
@@ -583,9 +585,81 @@ body {
 .logos img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
 }
+.name {
+  color: black;
+  text-align: center; /* Center the text */
+  font-size: 1.2rem; /* Adjust font size for a professional look */
+}
 
+.details {
+  color: #494242;
+  text-align: center; /* Center the text */
+  /* Make the text bold */
+  font-size: 1rem; /* Adjust font size for a professional look */
+}
 
+.testimonial {
+  padding: 20px;
+  margin: 10px auto; /* Center the testimonial block */
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  text-align: center; /* Center the text inside the testimonial */
+}
 
+.media-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the items in the media body */
+}
+
+.overview {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the overview content */
+  margin-bottom: 15px; /* Add some space below the overview */
+}
+
+.overview img {
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+/* Define the keyframes for the bottom-to-top animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%); /* Start from the bottom */
+  }
+  100% {
+    transform: translateY(-100%); /* Move to the top */
+  }
+}
+
+/* Apply the animation to the testimonials container */
+.animate_testmonials {
+  animation: slideUp 20s infinite linear; /* Use the defined keyframes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  height: 300px; /* Adjust the height as needed */
+  position: relative; /* Ensure positioning context */
+}
+
+/* Style for individual testimonials */
+.testimonial {
+  padding: 20px;
+  margin: 10px 0;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 80%; /* Adjust the width as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
 
 
@@ -608,4 +682,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px 0;
+}
+.st_page h3 {
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+p.iner_page_heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 17px;
+  text-align: left;
+  margin: 7px 0;
+  padding: 0;
 }
