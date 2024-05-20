@@ -1,656 +1,888 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Navbar Example</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css">
-    <style>
-      .navbar-nav .nav-link {
-        position: relative;
-        display: inline-block;
-        color: black; /* Default text color */
-        transition: color 0.25s ease-out; /* Smooth color transition */
-      }
-      .navbar-nav .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 2px;
-        bottom: -2px; /* Position the line just below the text */
-        left: 0;
-        background-color: green;
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-      }
-      .navbar-nav .nav-link:hover {
-        color: green; /* Change text color on hover */
-      }
-      .navbar-nav .nav-link:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-      .nav-item.active .nav-link {
-        color: green; /* Active link text color */
-      }
-      .nav-item.active .nav-link::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-      .marquee-container {
-        width: 100%; /* Make the marquee container span the entire width */
-        overflow: hidden; /* Hide the overflowing content */
-      }
 
-      .marquee {
-        width: auto; /* Set the width to auto to accommodate all content */
-      }
-      body {
-            background-image: url(../images/mainBg.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            /* padding: 20px 0 40px 0; */
-        }
-        row align-items-centerdiv:hover {
-        -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, .6);
-        box-shadow: 0 0 1rem rgba(0, 0, 0, .6);
-        background-color: rgba(255, 255, 255, .25);
-      }
-      .footer-main {
-  background-color: #f8f9fa;
-  padding: 50px 0;
-}
-
-.block {
-  margin-bottom: 30px;
-}
-
-.block-2 ul {
-  list-style: none;
-  padding: 0;
-}
-
-.block-2 ul li {
-  margin-bottom: 10px;
-}
-
-.social-icon {
-  list-style: none;
-  padding: 0;
-}
-
-.social-icon li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.social-icon li:last-child {
-  margin-right: 0;
-}
-
-.social-icon a {
-  color: #333;
-  font-size: 20px;
-  transition: color 0.3s ease;
-}
-
-.social-icon a:hover {
-  color: #007bff;
-}
-
-.foot_paragraph {
-  font-size: 14px;
-  color: #666;
-}
-
-.logo-footer {
-  width: 100px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .block-2 {
-    margin-top: 20px;
-  }
-}
-.footer-main {
-  background-color: #393B43;
-}
-.footer-main .block img {
-    margin-bottom: 20px;
-}
-
-.logo-footer {
-    height: 60px;
-    margin-top: 0px;
-    width: 300px;
-}
-.foot_paragraph {
-    color: #abaeb5; /* Text color */
-    font-size: 16px; /* Font size */
-    font-weight: normal; /* Font weight */
-    margin: 12px auto; /* Margin */
-    display: block; /* Display type */
-    width: 100%; /* Width */
-    font-family: "Poppins", sans-serif; /* Font family */
-    text-align: center; /* Text alignment */
-    
-}
-ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-    unicode-bidi: isolate;
-}
-.footer-main .block-2 ul {
-    display: flex;
-    justify-content: center;
-    padding-left: 0; /* Remove default padding */
-}
-
-.footer-main .block-2 ul li {
-    margin: 0 10px; /* Adjust spacing between list items */
-    list-style-type: none; /* Remove default bullet points */
-}
-
-.footer-main .block-2 ul li a {
-    color: grey; /* Inherit color from parent */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth transition for color change */
-}
-
-.footer-main .block-2 ul li a:hover {
-    color: white !important; /* Change text color to white on hover */
-}
-
-.footer-main .block-2 ul li a::-moz-focus-inner {
-    border: 0; /* Remove the border */
-    outline: none; /* Remove the outline */
-}
-
-.footer-main .block-2 ul li a:-moz-focusring {
-    outline: 1px dotted ButtonText; /* Add dotted outline for Firefox */
-}
-
-    </style>
-  </head>
-  <body>
-    <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
-      <div class="container">
-        <a class="navbar-brand" href="/" previewlistener="true">
-			<img src="/images/logo.png" class="logo" alt="logo">
-		</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="ph-fill ph-list"></i>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="/" previewlistener="true">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about" previewlistener="true">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact" previewlistener="true">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link open-in-chrome" href="/login" previewlistener="true">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-
-    <div class="row align-items-center">
-      <div class="col-md-6 order-md-1 text-center text-md-left">
-        <span class="home_grey_text mb-3">Power of AI in your resume</span>
-        <h1 class="text-black mb-4 font-weight-bolder">
-          <strong>10x</strong> <span style="font-weight: normal;">your
-            shortlisting chances with </span><strong>AI Powered</strong> customized
-          Resumes
-        </h1>
-        <p class="home_grey_text mb-5">Our AI knows what employers look for in candidates across 150
-          roles.
-          Get your own AI powered resume in 30 min.</p>
-        <div class="hm_cta_btn">
-          <a href="/login" class="btn-main-md open-in-chrome" previewlistener="true">Make my resume</a> <span class="mini_text">Takes 3 steps
-            and 30 minutes only</span>
-        </div>
-      </div>
-      <div class="col-md-6 text-center order-1 order-md-2">
-        <div class="row">
-          <div class="col-sm-12">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="slider_tagline">
-                        <h3><span class="love_text">
-                            <img src="/images/heart-icon.png" class="heart_icon" alt="">
-                            By</span> Engineers</h3>
-                      </div>
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/rohit.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Rohit Attri</b></div>
-                              <div class="details">Senior java Developer</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>Customized resumes for each job application was a
-                              game
-                              changer. It has helped me get so many more interview
-                              calls!</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-12 mt-1">
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/uma.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Uma Maheshwari</b></div>
-                              <div class="details">Java Developer</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>This site is amazing. Personalized resume generated
-                              here
-                              has helped me highlight my job application to so
-                              many
-                              more job applications. Mind blowing!</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="slider_tagline">
-                        <h3><span class="love_text"><img src="/images/heart-icon.png" class="heart_icon" alt=""> By</span> Product
-                          Managers
-                        </h3>
-                      </div>
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/rk.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Rishi Kalantri </b></div>
-                              <div class="details">Senior Product Manager</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>Not getting interview calls when searching jobs is
-                              stressful. That changed after creating a customized
-                              resume using this platform. Even the bonuses are of
-                              amazing value &amp; give confidence during interviews!
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-12 mt-1">
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/vinay.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Vinay Mehta</b></div>
-                              <div class="details">Product Manager</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>I am still amazed by how my resume transformed after
-                              using this platform. It's absolutely crisp and the
-                              right
-                              elements of my profile are getting highlighted
-                              correctly.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item active">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="slider_tagline">
-                        <h3><span class="love_text"><img src="/images/heart-icon.png" class="heart_icon" alt=""> By</span> Salespersons
-                        </h3>
-                      </div>
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/ananya.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Ananya Pandey</b></div>
-                              <div class="details">Sales Manager</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>It definitely works, I am getting so many more
-                              interview
-                              calls after using the resume generated on this
-                              platform.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-12 mt-1">
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/Shubham.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Shubham </b></div>
-                              <div class="details">Sales Manager</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>Resume made within 10 minutes. Customized for my job
-                              application and highlighting the right skills and
-                              knowledge.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="slider_tagline">
-                        <h3><span class="love_text"><img src="/images/heart-icon.png" class="heart_icon" alt=""> By</span> Marketers</h3>
-                      </div>
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/sunil.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Sunil Atal</b></div>
-                              <div class="details">Digital Marketing Specialist
-                              </div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>Not very tech-savvy, and I was skeptical about this
-                              platform. This was very very easy to use, compared
-                              to
-                              other platforms i've tried &amp; the resume generated
-                              was
-                              of great quality too.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-12 mt-1">
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/rajneesh.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Rajneesh </b></div>
-                              <div class="details">Marketing Manager</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>Formatting my resume used to take a lot of time,
-                              after
-                              making even small changes. This platform took all
-                              that
-                              pain away. It allowed me to focus on my job
-                              applications and interview calls</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="slider_tagline">
-                        <h3><span class="love_text"><img src="/images/heart-icon.png" class="heart_icon" alt=""> By</span> HR
-                          Professionals
-                        </h3>
-                      </div>
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/sonika.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Sonika</b></div>
-                              <div class="details">HR Manager</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>It was difficult to find the right design &amp; my resume
-                              template was holding the job applications back.
-                              OutSpark
-                              not only made it better but the templates are
-                              visually
-                              appealing. Helped me get multiple interview
-                              confirmations</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-12 mt-1">
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/prateek.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Prateek </b></div>
-                              <div class="details">HR Manager</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>10 mins is all it took. I got an amazing resume and
-                              the
-                              bonuses helped me be confident in my interview.
-                              10/10 ,
-                              will use again.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="slider_tagline">
-                        <h3><span class="love_text"><img src="/images/heart-icon.png" class="heart_icon" alt=""> By</span> BPO
-                          Professionals
-                        </h3>
-                      </div>
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/gopal.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Gopal Yadav</b></div>
-                              <div class="details">Customer Support</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>OutSpark turned my resume from normal to amazing. I
-                              am
-                              getting many more interview calls because I think
-                              my right skills are getting highlighted in the
-                              resume.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-12 mt-1">
-                      <div class="media">
-                        <div class="media-body">
-                          <div class="overview">
-                            <img src="/images/hitesh.png" class="mr-3" alt="">
-                            <div class="slide_detail">
-                              <div class="name"><b>Hitesh Dayma </b></div>
-                              <div class="details">Technical Support</div>
-                            </div>
-                          </div>
-                          <div class="testimonial">
-                            <img src="/images/toparrow.png" class="toparrow" alt="">
-                            <p>The cover letter was the extra edge I needed. It
-                              demonstrated my enthusiasm and I think, it set me
-                              apart
-                              from other applicants during shortlisting for
-                              interview
-                              calls.</p>
-                          </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Navbar Example</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-              <!-- Carousel indicators -->
-              <!--<ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-              </ol> -->
-              <!-- Wrapper for carousel items -->
-               <!-- Slider row with logos -->
-              
-            </div>
+
+	<link rel="stylesheet" href="style.css">
+	<style>
+
+
+	</style>
+</head>
+
+<body>
+	<nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0" style="margin-bottom: 50px;">
+		<div class="container">
+			<a class="navbar-brand" href="/" previewlistener="true">
+				<img src="/images/logo.png" class="logo" alt="logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="ph-fill ph-list"></i>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="/" previewlistener="true">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/about" previewlistener="true">About us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contact" previewlistener="true">Contact</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link open-in-chrome" href="/login" previewlistener="true">Login</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-6 order-md-1 text-center text-md-left">
+
+				<span class="home_grey_text mb-3">Power of AI in your resume</span>
+
+				<h1 class="text-black mb-4 font-weight-bolder">
+					<strong>10x</strong> <span style="font-weight: normal;">your
+						shortlisting chances with </span><strong>AI Powered</strong> customized
+					Resumes
+				</h1>
+
+				<p class="home_grey_text mb-5">Our AI knows what employers look for in candidates across 150
+					roles.
+					Get your own AI powered resume in 30 min.</p>
+
+				<div class="hm_cta_btn">
+					<a href="/login" class="btn-main-md open-in-chrome" previewlistener="true">Make my resume</a> <span
+						class="mini_text">Takes 3 steps
+						and 30 minutes only</span>
+				</div>
+
+			</div>
+
+			<div class="col-md-6 text-center order-1 order-md-2">
+				<div class="row">
+					<div class="col-sm-12">
+						<div id="myCarousel" class="carousel slide" data-ride="carousel">
+							<!-- Carousel indicators -->
+							<!--<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol> -->
+							<!-- Wrapper for carousel items -->
+							<div class="carousel-inner">
+								<div class="carousel-item">
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="slider_tagline">
+												<h3><span class="love_text">
+														<img src="/images/heart-icon.png" class="heart_icon" alt="">
+														By</span> Engineers</h3>
+											</div>
+
+											<div class="media">
+												<div class="media-body">
+
+													<div class="overview">
+														<img src="/images/rohit.png" class="mr-3" alt="">
+														<div class="slide_detail">
+															<div class="name"><b>Rohit Attri</b></div>
+															<div class="details">Senior java Developer</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>Customized resumes for each job application was a
+															game
+															changer. It has helped me get so many more interview
+															calls!</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 mt-1">
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/uma.png" class="mr-3" alt="">
+														<div class="slide_detail">
+															<div class="name"><b>Uma Maheshwari</b></div>
+															<div class="details">Java Developer</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>This site is amazing. Personalized resume generated
+															here
+															has helped me highlight my job application to so
+															many
+															more job applications. Mind blowing!</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="row">
+										<div class="col-sm-12">
+
+											<div class="slider_tagline">
+												<h3><span class="love_text"><img src="/images/heart-icon.png"
+															class="heart_icon" alt=""> By</span> Product
+													Managers
+												</h3>
+											</div>
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/rk.png" class="mr-3" alt="">
+														<div class="slide_detail">
+															<div class="name"><b>Rishi Kalantri </b></div>
+															<div class="details">Senior Product Manager</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>Not getting interview calls when searching jobs is
+															stressful. That changed after creating a customized
+															resume using this platform. Even the bonuses are of
+															amazing value &amp; give confidence during interviews!
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 mt-1">
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/vinay.png" class="mr-3" alt="">
+														<div class="slide_detail">
+															<div class="name"><b>Vinay Mehta</b></div>
+															<div class="details">Product Manager</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>I am still amazed by how my resume transformed after
+															using this platform. It's absolutely crisp and the
+															right
+															elements of my profile are getting highlighted
+															correctly.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="carousel-item active">
+									<div class="row">
+										<div class="col-sm-12">
+
+											<div class="slider_tagline">
+												<h3><span class="love_text"><img src="/images/heart-icon.png"
+															class="heart_icon" alt=""> By</span> Salespersons
+												</h3>
+											</div>
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/ananya.png" class="mr-3" alt="">
+														<div class="slide_detail">
+															<div class="name"><b>Ananya Pandey</b></div>
+															<div class="details">Sales Manager</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>It definitely works, I am getting so many more
+															interview
+															calls after using the resume generated on this
+															platform.
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 mt-1">
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/Shubham.png" class="mr-3" alt="">
+
+														<div class="slide_detail">
+															<div class="name"><b>Shubham </b></div>
+															<div class="details">Sales Manager</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+
+														<p>Resume made within 10 minutes. Customized for my job
+															application and highlighting the right skills and
+															knowledge.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="carousel-item">
+									<div class="row">
+										<div class="col-sm-12">
+
+											<div class="slider_tagline">
+												<h3><span class="love_text"><img src="/images/heart-icon.png"
+															class="heart_icon" alt=""> By</span> Marketers</h3>
+											</div>
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/sunil.png" class="mr-3" alt="">
+
+														<div class="slide_detail">
+															<div class="name"><b>Sunil Atal</b></div>
+															<div class="details">Digital Marketing Specialist
+															</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>Not very tech-savvy, and I was skeptical about this
+															platform. This was very very easy to use, compared
+															to
+															other platforms i've tried &amp; the resume generated
+															was
+															of great quality too.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 mt-1">
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/rajneesh.png" class="mr-3" alt="">
+
+														<div class="slide_detail">
+															<div class="name"><b>Rajneesh </b></div>
+															<div class="details">Marketing Manager</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>Formatting my resume used to take a lot of time,
+															after
+															making even small changes. This platform took all
+															that
+															pain away. It allowed me to focus on my job
+															applications and interview calls</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="carousel-item">
+									<div class="row">
+										<div class="col-sm-12">
+
+											<div class="slider_tagline">
+												<h3><span class="love_text"><img src="/images/heart-icon.png"
+															class="heart_icon" alt=""> By</span> HR
+													Professionals
+												</h3>
+											</div>
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/sonika.png" class="mr-3" alt="">
+
+														<div class="slide_detail">
+															<div class="name"><b>Sonika</b></div>
+															<div class="details">HR Manager</div>
+														</div>
+
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>It was difficult to find the right design &amp; my resume
+															template was holding the job applications back.
+															OutSpark
+															not only made it better but the templates are
+															visually
+															appealing. Helped me get multiple interview
+															confirmations</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 mt-1">
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/prateek.png" class="mr-3" alt="">
+
+														<div class="slide_detail">
+															<div class="name"><b>Prateek </b></div>
+															<div class="details">HR Manager</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>10 mins is all it took. I got an amazing resume and
+															the
+															bonuses helped me be confident in my interview.
+															10/10 ,
+															will use again.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="carousel-item">
+									<div class="row">
+										<div class="col-sm-12">
+
+											<div class="slider_tagline">
+												<h3><span class="love_text"><img src="/images/heart-icon.png"
+															class="heart_icon" alt=""> By</span> BPO
+													Professionals
+												</h3>
+											</div>
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+
+														<img src="/images/gopal.png" class="mr-3" alt="">
+
+														<div class="slide_detail">
+															<div class="name"><b>Gopal Yadav</b></div>
+															<div class="details">Customer Support</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>OutSpark turned my resume from normal to amazing. I
+															am
+															getting many more interview calls because I think
+															my right skills are getting highlighted in the
+															resume.
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 mt-1">
+											<div class="media">
+
+												<div class="media-body">
+													<div class="overview">
+														<img src="/images/hitesh.png" class="mr-3" alt="">
+
+														<div class="slide_detail">
+															<div class="name"><b>Hitesh Dayma </b></div>
+															<div class="details">Technical Support</div>
+														</div>
+													</div>
+
+													<div class="testimonial">
+														<img src="/images/toparrow.png" class="toparrow" alt="">
+														<p>The cover letter was the extra edge I needed. It
+															demonstrated my enthusiasm and I think, it set me
+															apart
+															from other applicants during shortlisting for
+															interview
+															calls.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- <hr> -->
+	<section class="feature section pt-3 second_section">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-6 mr-auto align-content-end mt-5">
+					<div class="feature-content">
+						<!-- Feature Title -->
+						<h2 class="font-weight-bold">
+							<strong>One size doesn't fit all</strong>
+						</h2>
+
+						<h3 class="font-weight-bold">Get different resumes for
+							different job openings</h3>
+						<!-- Feature Description -->
+						<p class="desc mt-4">Every job opening is unique and requires
+							a certain skillset. Our resumes are tailormade for each job
+							opening you apply for, increasing your selection likeliness
+							manifold.</p>
+
+						<div class="hm_cta_btn">
+							<a href="/login" class="btn-main-md open-in-chrome" previewlistener="true">Make my
+								resume</a>
+							<span class="mini_text">Takes 3 steps and 30 minutes only</span>
+						</div>
+					</div>
+					<!-- Testimonial Quote -->
+
+				</div>
+
+				<div class="col-lg-6 ml-auto justify-content-around">
+					<!-- Feature Mockup -->
+					<div class="image-content mt-5">
+						<img class="img-fluid figure-img" src="/images/bnr1.png" alt="iphone">
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<section class="service section bg-gray third_section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-6 align-content-end mt-5">
+					<div class="feature-content center-mob">
+						<!-- Feature Title -->
+
+						<h2 class="font-weight-bold"><strong>What they say about us</strong></h2>
+						<!-- Feature Description -->
+						<p class="desc mt-4">Read what people have to say about resumes created from OutSpark and
+							other
+							bonuses that helped them in their careers.</p>
+
+						<div class="hm_cta_btn">
+							<a href="/login" class="btn-main-md open-in-chrome" previewlistener="true">Make my
+								resume</a>
+							<span class="mini_text">Takes 3 steps and 30 minutes only</span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-lg-6 ml-auto align-self-center" style="overflow: hidden;">
+					<div class="service-box">
+
+
+						<div class="row align-items-center animate_testmonials">
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/ra.png" alt="" class="image dp">
+										<p class="font-weight-bold">Rohit Attri
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">Recruiters Love My Tailored Resumes</span>
+									<p class="lightText">Getting a tailored resume for each application was a dream.
+										I've never received so much positive feedback from recruiters!</p>
+
+								</div>
+							</div>
+
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/rk.png" alt="" class="image dp">
+										<p class="font-weight-bold">Rishi Kalantri
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">From Interviews to Dream Job</span>
+									<p class="lightText">I had interviews but no offers. That changed after using
+										this
+										platform. The interview prep tips were invaluable, and I secured my dream
+										job!
+									</p>
+
+								</div>
+							</div>
+
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/vm.png" alt="" class="image dp">
+										<p class="font-weight-bold">Vinay Mehta
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">The Ultimate Resume Upgrade</span>
+									<p class="lightText">MyOutSpark turned my existing resume from ordinary to
+										extraordinary. Recruiters are now noticing my skills and inviting me for
+										interviews. It's like having a personal career booster!</p>
+
+								</div>
+							</div>
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/bs.png" alt="" class="image dp">
+										<p class="font-weight-bold">Bhupender Singh
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+										</p>
+									</div>
+
+									<span class="mini_tagline">Visually Appealing Resumes That Work</span>
+									<p class="lightText">My resume's design was holding me back. This tool not only
+										made
+										it visually appealing but also helped me showcase my skills effectively.</p>
+
+								</div>
+							</div>
+
+
+
+						</div>
+
+
+
+						<div class="row align-items-center animate_testmonials">
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/sa.png" alt="" class="image dp">
+										<p class="font-weight-bold">Sunil Atal
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">Personalized Cover Letter Advantage</span>
+
+									<p class="lightText">Had to create a resume urgently as a friend referred
+										me to his company. This was a life saver indeed!</p>
+
+								</div>
+							</div>
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/rr.png" alt="" class="image dp">
+										<p class="font-weight-bold">Rajneesh
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">A Resume Transformation Worth Celebrating</span>
+
+									<p class="lightText">I can't believe the difference this product made to my
+										resumé.
+										It's now a confident representation of my abilities. I'm not just job
+										hunting –
+										I'm career advancing. Thank you!</p>
+
+								</div>
+							</div>
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/aj.png" alt="" class="image dp">
+										<p class="font-weight-bold">Ankit jaishwal
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">Landed an Interview Within Days!</span>
+
+									<p class="lightText">I was amazed by how my resume transformed after using this
+										platform. It's like my skills came to life on paper. I got an interview
+										within
+										days!</p>
+
+								</div>
+							</div>
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/gy.png" alt="" class="image dp">
+										<p class="font-weight-bold">Gopal Yadav
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+										</p>
+									</div>
+
+									<span class="mini_tagline">Stress-Free Formatting Solution</span>
+
+									<p class="lightText">I used to spend hours formatting. This platform took away
+										that
+										stress and allowed me to focus on my job hunt. It's a must-have!</p>
+
+								</div>
+							</div>
+
+
+
+						</div>
+
+						<div class="row align-items-center animate_testmonials">
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/ra.png" alt="" class="image dp">
+										<p class="font-weight-bold">Rohit Attri
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">Recruiters Love My Tailored Resumes</span>
+									<p class="lightText">Getting a tailored resume for each application was a dream.
+										I've never received so much positive feedback from recruiters!</p>
+
+								</div>
+							</div>
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/rk.png" alt="" class="image dp">
+										<p class="font-weight-bold">Rishi Kalantri
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">From Interviews to Dream Job</span>
+									<p class="lightText">I had interviews but no offers. That changed after using
+										this
+										platform. The interview prep tips were invaluable, and I secured my dream
+										job!
+									</p>
+
+								</div>
+							</div>
+
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/vm.png" alt="" class="image dp">
+										<p class="font-weight-bold">Vinay Mehta
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+
+										</p>
+									</div>
+
+									<span class="mini_tagline">The Ultimate Resume Upgrade</span>
+									<p class="lightText">MyOutSpark turned my existing resume from ordinary to
+										extraordinary. Recruiters are now noticing my skills and inviting me for
+										interviews. It's like having a personal career booster!</p>
+
+								</div>
+							</div>
+
+
+							<div class="col-md-6 col-xs-12">
+								<!-- Service 01 -->
+								<div class="service-item">
+									<div class="profile_dt">
+										<img src="/images/bs.png" alt="" class="image dp">
+										<p class="font-weight-bold">Bhupender Singh
+											<img src="/images/rating_icons.png" alt="" class="rating_cl">
+										</p>
+									</div>
+
+									<span class="mini_tagline">Visually Appealing Resumes That Work</span>
+									<p class="lightText">My resume's design was holding me back. This tool not only
+										made
+										it visually appealing but also helped me showcase my skills effectively.</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+	<div class="container_1 rounded" style="margin-bottom: 50px" ;>
+		<h1 class="text-center" style="font-size: 30px; font-weight: 600;">Trusted
+			by Professionals who've worked at</h1>
+
+		<div class="slider_row mt-4 animate_slider">
+
+			<div class="logos">
+				<img class="fab" src="/images/amazon_logo.png" alt="">
+				<img class="fab" src="/images/flipkart_logo.png" alt="">
+				<img class="fab" src="/images/adobe_logo.png" alt="">
+				<img class="fab" src="/images/microsoft_logo.png" alt="">
+				<img class="fab" src="/images/hcl_logo.png" alt="">
+				<img class="fab" src="/images/timesinternet_logo.png" alt="">
+				<img class="fab" src="/images/tcs_logo.png" alt="">
+				<img class="fab" src="/images/naukari.png" alt="">
+
+			</div>
+		</div>
+
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+	</div>
+	</div>
+	<div class="footer-main">
+		<div class="container ">
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-12">
+					<div class="block text-center">
+						<a href="/" previewlistener="true"><img src="/images/logo.png" class="logo-footer"
+								alt="footer-logo"></a>
+
+						<p class="foot_paragraph">We
+							enable job seekers to get their dream jobs.<br> Starting with AI
+							powered customized resume, interview prep and many more features
+							yet to come.</p>
+						<!-- Social Site Icons -->
+						<ul class="social-icon list-inline">
+							<li class="list-inline-item"><a
+									href="https://www.facebook.com/profile.php?id=61550799067449" target="_blank"
+									previewlistener="true"><i class="ph ph-facebook-logo"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.instagram.com/myoutspark/" target="_blank"
+									previewlistener="true"><i class="ph ph-instagram-logo"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="ph ph-twitter-logo"></i></a></li>
+
+							<li class="list-inline-item"><a href="#"><i class="ph ph-linkedin-logo"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-2 col-12"></div>
+				<div class="col-md-12 col-12 mt-2 mt-lg-0">
+					<div class="block-2 center-mob text-center">
+						<!-- heading -->
+
+						<!-- links -->
+						<ul>
+							<li><a href="https://myoutspark.com/lp/specialoffers/SFSL_SinglePage_LP06_V1/payment.html?utm_source=Sales"
+									target="_blank" previewlistener="true">Offer</a>
+							</li>
+							<li><a href="/about" target="_blank" previewlistener="true">About Us</a></li>
+							<li><a href="/terms" target="_blank" previewlistener="true">Terms &amp; Conditions</a></li>
+							<li><a href="/privacy" target="_blank" previewlistener="true">Privacy Policy</a></li>
+							<!-- <li><a href="#">Cookie Settings</a></li>
+              <li><a href="#">Media / Press</a></li> -->
+							<li><a href="/refunds" target="_blank" previewlistener="true">Refund &amp; cancellation</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            heading
+            <h6>Resources</h6>
+            links
+            <ul>
+              <li><a href="#">Help Center </a></li>
+              <li><a href="#">Resume Examples</a></li>
+              <li><a href="#">Resume Guides</a></li>
+              <li><a href="#">Cover Letter Guides</a></li>
+              <li><a href="#">Resignation Letter Guides</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">10 Best Resume Builders</a></li>
+              <li><a href="#">5 Best AI Resume Writes</a></li>
+              <li><a href="#">Best Resume Apps for Android</a></li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="marquee-container">
-        <marquee behavior="scroll" direction="left" scrollamount="10" class="marquee">
-          <!-- Company logos as images with borders -->
-          <img src="/images/amazon_logo.png" alt="Amazon Logo" class="marquee-img">
-          <img src="/images/flipkart_logo.png" alt="Flipkart Logo" class="marquee-img">
-          <img src="/images/adobe_logo.png" alt="Adobe Logo" class="marquee-img">
-          <img src="/images/microsoft_logo.png" alt="Microsoft Logo" class="marquee-img">
-          <img src="/images/hcl_logo.png" alt="HCL Logo" class="marquee-img">
-          <img src="/images/tcs_logo.png" alt="TCS Logo" class="marquee-img">
-          <!-- Repeat your company logos here or adjust the content as needed -->
-        </marquee>
-      </div>
-      
-</div>
-</div>
-<div class="footer-main">
-    <div class="container ">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-12">
-                <div class="block text-center">
-                    <a href="/" previewlistener="true"><img src="/images/logo.png" class="logo-footer" alt="footer-logo"></a>
+        </div> -->
 
-                    <p class="foot_paragraph">We
-                        enable job seekers to get their dream jobs.<br> Starting with AI
-                        powered customized resume, interview prep and many more features
-                        yet to come.</p>
-                    <!-- Social Site Icons -->
-                    <ul class="social-icon list-inline">
-                        <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=61550799067449" target="_blank" previewlistener="true"><i class="ph ph-facebook-logo"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.instagram.com/myoutspark/" target="_blank" previewlistener="true"><i class="ph ph-instagram-logo"></i></a></li>
-                        <!-- <li class="list-inline-item"><a href="#"><i
-                                    class="ph ph-twitter-logo"></i></a></li>
+			</div>
+		</div>
+	</div>
+	<div class="text-center bg-dark py-4">
+		<small class="text-secondary">Copyright © 2024 OutSpark</small>
+	</div>
+</body>
 
-                            <li class="list-inline-item"><a href="#"><i
-                                    class="ph ph-linkedin-logo"></i></a></li> -->
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-2 col-12"></div>
-            <div class="col-md-12 col-12 mt-2 mt-lg-0">
-                <div class="block-2 center-mob text-center">
-                    <!-- heading -->
-
-                    <!-- links -->
-                    <ul>
-                        <li><a href="Images/logo.png" target="_blank" previewlistener="true">Offer</a>
-                        </li>
-                        <li><a href="/about" target="_blank" previewlistener="true">About Us</a></li>
-                        <li><a href="/terms" target="_blank" previewlistener="true">Terms &amp; Conditions</a></li>
-                        <li><a href="/privacy" target="_blank" previewlistener="true">Privacy Policy</a></li>
-                        <!-- <li><a href="#">Cookie Settings</a></li>
-                            <li><a href="#">Media / Press</a></li> -->
-                        <li><a href="/refunds" target="_blank" previewlistener="true">Refund &amp; cancellation</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- <div class="col-lg-3 col-md-4 col-6 mt-5 mt-lg-0">
-                    <div class="block-2">
-                        heading
-                        <h6>Resources</h6>
-                        links
-                        <ul>
-                            <li><a href="#">Help Center </a></li>
-                            <li><a href="#">Resume Examples</a></li>
-                            <li><a href="#">Resume Guides</a></li>
-                            <li><a href="#">Cover Letter Guides</a></li>
-                            <li><a href="#">Resignation Letter Guides</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">10 Best Resume Builders</a></li>
-                            <li><a href="#">5 Best AI Resume Writes</a></li>
-                            <li><a href="#">Best Resume Apps for Android</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-
-        </div>
-    </div>
-</div>
-  </body>
 </html>
