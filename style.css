@@ -264,8 +264,8 @@ margin-right: 0;
 }
 
 .social-icon a {
-color: #333;
-font-size: 20px;
+color: #000000be;
+font-size: 25px;
 transition: color 0.3s ease;
 }
 
@@ -289,7 +289,7 @@ margin-top: 20px;
 }
 }
 .footer-main {
-background-color: #393B43;
+background-color: #393B43!important;
 }
 .footer-main .block img {
 margin-bottom: 20px;
@@ -500,9 +500,7 @@ img {
     animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
     margin: 0 20px;
 }
-img {
-    outline: 1px solid #ffffff !important;
-}
+
 img {
     vertical-align: middle;
     border-style: none;
@@ -553,7 +551,7 @@ body {
   }
 }
 .animate_testmonials {
-  animation: marquee 20s infinite forwards;
+  animation: marquee 10s infinite forwards;
 }
 
 
@@ -681,4 +679,49 @@ p.iner_page_heading {
   text-align: left;
   margin: 7px 0;
   padding: 0;
+}
+.login_wrapper_updated {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  min-height: 59vh;
+  /* background-color: #23232374; */
+}
+login_wrapper_updated {
+  max-width: 400px;
+  width: 100%;
+}
+
+.login_logo_updated {
+  max-width: 150px;
+}
+
+.phoneNum_col {
+  margin-bottom: 15px;
+}
+
+.numField {
+  display: flex;
+  align-items: center;
+}
+
+.numField span {
+  padding: 0 10px;
+  background-color: #e9ecef;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.errormsg {
+  margin-top: 5px;
+}
+
+.form-check-label a {
+  text-decoration: none;
+  color: #007bffa5;
+}
+
+.form-check-label a:hover {
+  text-decoration: underline;
 }
