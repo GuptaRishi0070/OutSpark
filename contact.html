@@ -7,9 +7,40 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZ88mC6Up2uqSxCYlxB4yb60S0C5z2bW3hQXVOmYIV18GZGRFjf56lgEFL9/Z+U" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
 
 <body>
+    <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0" style="margin-bottom: 50px;">
+		<div class="container">
+			<a class="navbar-brand" href="/" previewlistener="true">
+				<img src="/images/logo.png" class="logo" alt="logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="ph-fill ph-list"></i>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="/" previewlistener="true">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/about.html" previewlistener="true">About us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contact.html">Contact Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link open-in-chrome" href="/login.html" previewlistener="true">Login</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
     <div class="container-fluid" style="background: #fff;">
 
         <div class="container">
@@ -58,6 +89,76 @@
         </div>
 
     </div>
+	<div class="footer-main bg-light py-4">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-12 col-12">
+                    <div class="block">
+                        <a href="/" previewlistener="true">
+                            <img src="/images/logo.png" class="logo-footer" alt="footer-logo">
+                        </a>
+                        <p class="foot_paragraph mt-3">We enable job seekers to get their dream jobs.<br> Starting with AI powered customized resume, interview prep and many more features yet to come.</p>
+                        <!-- Social Site Icons -->
+                        <ul class="social-icon list-inline mt-3">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/profile.php?id=61550799067449" target="_blank" previewlistener="true">
+                                    <i class="fab fa-facebook custom-icon"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/myoutspark/" target="_blank" previewlistener="true">
+                                    <i class="fab fa-instagram custom-icon"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" target="_blank" previewlistener="true">
+                                    <i class="fab fa-twitter custom-icon"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" target="_blank" previewlistener="true">
+                                    <i class="fab fa-linkedin custom-icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-12 col-12 mt-3">
+                    <div class="block-2 center-mob text-center">
+                        <!-- Links -->
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://myoutspark.com/lp/specialoffers/SFSL_SinglePage_LP06_V1/payment.html?utm_source=Sales" target="_blank" previewlistener="true">Offer</a></li>
+                            <li class="list-inline-item"><a href="/about" target="_blank" previewlistener="true">About Us</a></li>
+                            <li class="list-inline-item"><a href="/terms" target="_blank" previewlistener="true">Terms &amp; Conditions</a></li>
+                            <li class="list-inline-item"><a href="/privacy" target="_blank" previewlistener="true">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="/refunds" target="_blank" previewlistener="true">Refund &amp; Cancellation</a></li>
+                        </ul>
+					</div>
+				</div>
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            heading
+            <h6>Resources</h6>
+            links
+            <ul>
+              <li><a href="#">Help Center </a></li>
+              <li><a href="#">Resume Examples</a></li>
+              <li><a href="#">Resume Guides</a></li>
+              <li><a href="#">Cover Letter Guides</a></li>
+              <li><a href="#">Resignation Letter Guides</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">10 Best Resume Builders</a></li>
+              <li><a href="#">5 Best AI Resume Writes</a></li>
+              <li><a href="#">Best Resume Apps for Android</a></li>
+            </ul>
+          </div>
+        </div> -->
+
+			</div>
+		</div>
+	</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -66,7 +167,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
+<script>
+  
+</script>
 </body>
 
 </html>
